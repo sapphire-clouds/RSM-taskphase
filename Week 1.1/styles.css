@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cormorant Garamond", serif;
+    background-color: #e3d3cc;
+    color: #333;
+}
+
+/* Header*/
+.header {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(27, 9, 6, 0.618);
+}
+
+.header h1 {
+    position: absolute;
+    font-weight: 600;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.538);
+}
+
+/*Heading */
+.event {
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 20px;
+    font-weight: 400;
+}
+.event h1{
+    font-size:40px ;
+    color: #3d1f12;
+}
+
+.event p{
+    font-size: 25px;
+    color: #614833;
+}
+
+
+/* Upcoming Events*/
+.upcoming {
+    margin-top: 5px;
+    padding: 20px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.upcoming h2 {
+    font-size: 25px;
+    color: #3d1f12;;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.upcoming h4{
+    font-size: 20px;
+}
+
+.event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure full height */
+    background-color: #fdf4e9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    padding: 15px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Push buttons to bottom */
+    width: 100%;
+}
+
+
+.event-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.event-card h3 {
+    font-size: 25px;
+    color: #3c1a04;
+    margin: 15px 0;
+}
+
+.event-card p {
+    font-size: 18px;
+    color: #977462;
+    margin-bottom: 15px;
+}
+
+
+
+.button {
+    color: #180000;
+    border: none;
+    padding: 12px 10px;
+    font-size: 20px;
+    display: flex;
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+
+
+.card-actions .button:first-child {
+    border-right: 2px solid #bea088;
+}
+
+.card-actions .button:last-child {
+    border-right: none;
+}
+
+
+.register-checkbox {
+    display: none;
+}
+
+.info-checkbox {
+    display: none;
+}
+
+/* Register Form Popup */
+.form-popup {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1001;
+}
+
+.register-checkbox:checked + .form-popup {
+    display: block;
+}
+
+.register-form input[type="text"], 
+.register-form select, 
+.register-form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.register-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.register-form button:hover {
+    background-color: #2980b9;
+}
+
+
+
+.register-checkbox:checked + .form-popup .thanks-message {
+    display: block;
+}
+
+/* Event Info Popup */
+.info-popup {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1000;
+}
+
+.info-checkbox:checked + .info-popup {
+    display: block;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 2rem;
+    color: #e74c3c;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    color: #c0392b;
+}
